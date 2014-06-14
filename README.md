@@ -42,5 +42,4 @@ These packages can be installed from [CTAN](http://www.ctan.org/), or — if you a
 - [hyphenat](http://www.ctan.org/pkg/hyphenat) to prevent hyphenation
 - [lmodern](http://www.tug.dk/FontCatalogue/lmodern/) for use of the improved Latin Modern font
 - [microtype](http://www.ctan.org/pkg/microtyp) for improved prettiness
-- [multirow](http://www.ctan.org/pkg/multirow)
 - [xcolor](http://www.ctan.org/pkg/xcolor) for setting row shading
