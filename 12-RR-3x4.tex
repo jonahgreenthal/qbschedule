@@ -1,0 +1,140 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%                                                                     %%%%%
+%%%%%    Template for quizbowl schedule comprising a twelve-team round    %%%%%
+%%%%%    robin, followed by three playoff pools of four teams each.       %%%%%
+%%%%%    Copyright 2014, Jonah Greenthal <jonah@jonahgreenthal.com>       %%%%%
+%%%%%    You can use, modify, and distribute this in any way you want,    %%%%%
+%%%%%    as long as you give credit.                                      %%%%%
+%%%%%                                                                     %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[landscape]{qbschedule}
+\usepackage[top=0.5in, bottom=0.5in, left=0.5in, right=0.5in]{geometry}
+
+\def\TournamentName{Twelve-Team Round Robin, then 3 Pools of 4}
+\def\TournamentSubtitle{\LaTeX\ Schedule Template}
+\def\ControlRoom{Room Z}
+
+\newarray\Round
+\Round(01)={Round 1}
+\Round(02)={Round 2}
+\Round(03)={Round 3}
+\Round(04)={Round 4}
+\Round(05)={Round 5}
+\Round(06)={Round 6}
+\Round(07)={Round 7}
+\Round(08)={Round 8}
+\Round(09)={Round 9}
+\Round(10)={Round 10}
+\Round(11)={Round 11}
+\Round(12)={Round 12}
+\Round(13)={Round 13}
+\Round(14)={Round 14}
+
+\newarray\InitialSeed
+\InitialSeed(01)={Initial Seed 1}
+\InitialSeed(02)={Initial Seed 2}
+\InitialSeed(03)={Initial Seed 3}
+\InitialSeed(04)={Initial Seed 4}
+\InitialSeed(05)={Initial Seed 5}
+\InitialSeed(06)={Initial Seed 6}
+\InitialSeed(07)={Initial Seed 7}
+\InitialSeed(08)={Initial Seed 8}
+\InitialSeed(09)={Initial Seed 9}
+\InitialSeed(10)={Initial Seed 10}
+\InitialSeed(11)={Initial Seed 11}
+\InitialSeed(12)={Initial Seed 12}
+
+\newarray\PlayoffSeed
+\PlayoffSeed(01)={Playoff Seed 1}
+\PlayoffSeed(02)={Playoff Seed 2}
+\PlayoffSeed(03)={Playoff Seed 3}
+\PlayoffSeed(04)={Playoff Seed 4}
+\PlayoffSeed(05)={Playoff Seed 5}
+\PlayoffSeed(06)={Playoff Seed 6}
+\PlayoffSeed(07)={Playoff Seed 7}
+\PlayoffSeed(08)={Playoff Seed 8}
+\PlayoffSeed(09)={Playoff Seed 9}
+\PlayoffSeed(10)={Playoff Seed 10}
+\PlayoffSeed(11)={Playoff Seed 11}
+\PlayoffSeed(12)={Playoff Seed 12}
+
+\newarray\Room
+\Room(1)={Room A} % Average difference between seeds: prelims 3.5, playoffs top and middle brackets,    overall 3.9
+\Room(2)={Room B} % Average difference between seeds: prelims 2.0, playoffs top and middle brackets,    overall 2.3
+\Room(3)={Room C} % Average difference between seeds: prelims 4.4, playoffs middle and top brackets,    overall 4.9
+\Room(4)={Room D} % Average difference between seeds: prelims 4.6, playoffs all three brackets,         overall 4.9
+\Room(5)={Room E} % Average difference between seeds: prelims 3.6, playoffs bottom and middle brackets, overall 4.1
+\Room(6)={Room F} % Average difference between seeds: prelims 2.3, playoffs bottom and middle brackets, overall 2.6
+
+\setbool{ShowReaders}{true}
+\newarray\Reader
+\Reader(1)={Al Anderson}
+\Reader(2)={Betsy Baxter}
+\Reader(3)={Charlie Castro}
+\Reader(4)={Dana Donaldson}
+\Reader(5)={Ellen Easter}
+\Reader(6)={Fred Fishman}
+
+\setbool{ShowScorekeepers}{true}
+\newarray\Scorekeeper
+\Scorekeeper(1)={Ann Allen}
+\Scorekeeper(2)={Bill Berger}
+\Scorekeeper(3)={Carly Carter}
+\Scorekeeper(4)={Durwin Dubois}
+\Scorekeeper(5)={Earl Esparza}
+\Scorekeeper(6)={Fiona Fuller}
+
+\setbool{ShowBuzzerAssignments}{true}
+\newarray\Buzzer
+\Buzzer(1)={\InitialSeed(03)}
+\Buzzer(2)={\InitialSeed(01)}
+\Buzzer(3)={\InitialSeed(11)}
+\Buzzer(4)={\InitialSeed(05)}
+\Buzzer(5)={\InitialSeed(09)}
+\Buzzer(6)={\InitialSeed(07)}
+
+% It is generally not necessary to edit anything below this line, but hey, do whatever you want.
+\setlength{\TeamNameSize}{11pt}
+\setlength{\RoomColumnWidth}{1.35in}
+\renewcommand{\arraystretch}{0.84}
+
+\begin{document}
+\begin{center}
+	\rowcolors*{1}{white}{gray}
+	\begin{tabular}{|y{\LeftColumnWidth}x{\RoomColumnWidth}x{\RoomColumnWidth}x{\RoomColumnWidth}x{\RoomColumnWidth}x{\RoomColumnWidth}x{\RoomColumnWidth}|}
+	\hline
+	\rowcolor{black}
+	\room{Room}				&	\room{\Room(1)}					&	\room{\Room(2)}					&	\room{\Room(3)}					&	\room{\Room(4)}					&	\room{\Room(5)}					&	\room{\Room(6)}			\bigstrut \tabularnewline
+	\ifbool{ShowReaders}{
+	\staff{Reader}			&	\staff{\Reader(1)}				&	\staff{\Reader(2)}				&	\staff{\Reader(3)}		&	\staff{\Reader(4)}				&	\staff{\Reader(5)}				&	\staff{\Reader(6)}		\bigstrut \tabularnewline
+	}{}
+	\ifbool{ShowScorekeepers}{
+	\staff{Scorekeeper}		&	\staff{\Scorekeeper(1)}			&	\staff{\Scorekeeper(2)}			&	\staff{\Scorekeeper(3)}	&	\staff{\Scorekeeper(4)}			&	\staff{\Scorekeeper(5)}			&	\staff{\Scorekeeper(6)}	\bigstrut \tabularnewline
+	}{}
+	\ifbool{ShowBuzzerAssignments}{
+	\buzzer{Buzzer System}	&	\buzzer{\Buzzer(1)}				&	\buzzer{\Buzzer(2)}				&	\buzzer{\Buzzer(3)}				&	\buzzer{\Buzzer(4)}				&	\buzzer{\Buzzer(5)}				&	\buzzer{\Buzzer(6)}		\bigstrut \tabularnewline
+	}{}
+	\hline
+	\round{\Round(01)}		&	\matchup{\InitialSeed(09)}{\InitialSeed(05)}	&	\matchup{\InitialSeed(08)}{\InitialSeed(06)}	&	\matchup{\InitialSeed(01)}{\InitialSeed(07)}	&	\matchup{\InitialSeed(10)}{\InitialSeed(04)}	&	\matchup{\InitialSeed(11)}{\InitialSeed(03)}	&	\matchup{\InitialSeed(12)}{\InitialSeed(02)}	\tabularnewline
+	\round{\Round(02)}		&	\matchup{\InitialSeed(04)}{\InitialSeed(09)}	&	\matchup{\InitialSeed(02)}{\InitialSeed(11)}	&	\matchup{\InitialSeed(03)}{\InitialSeed(10)}	&	\matchup{\InitialSeed(01)}{\InitialSeed(12)}	&	\matchup{\InitialSeed(05)}{\InitialSeed(08)}	&	\matchup{\InitialSeed(06)}{\InitialSeed(07)}	\tabularnewline
+	\round{\Round(03)}		&	\matchup{\InitialSeed(10)}{\InitialSeed(02)}	&	\matchup{\InitialSeed(07)}{\InitialSeed(05)}	&	\matchup{\InitialSeed(08)}{\InitialSeed(04)}	&	\matchup{\InitialSeed(09)}{\InitialSeed(03)}	&	\matchup{\InitialSeed(01)}{\InitialSeed(06)}	&	\matchup{\InitialSeed(11)}{\InitialSeed(12)}	\tabularnewline
+	\round{\Round(04)}		&	\matchup{\InitialSeed(05)}{\InitialSeed(06)}	&	\matchup{\InitialSeed(12)}{\InitialSeed(10)}	&	\matchup{\InitialSeed(02)}{\InitialSeed(09)}	&	\matchup{\InitialSeed(03)}{\InitialSeed(08)}	&	\matchup{\InitialSeed(04)}{\InitialSeed(07)}	&	\matchup{\InitialSeed(01)}{\InitialSeed(11)}	\tabularnewline
+	\round{\Round(05)}		&	\matchup{\InitialSeed(11)}{\InitialSeed(10)}	&	\matchup{\InitialSeed(06)}{\InitialSeed(04)}	&	\matchup{\InitialSeed(07)}{\InitialSeed(03)}	&	\matchup{\InitialSeed(08)}{\InitialSeed(02)}	&	\matchup{\InitialSeed(09)}{\InitialSeed(12)}	&	\matchup{\InitialSeed(05)}{\InitialSeed(01)}	\tabularnewline
+	\round{\Round(06)}		&	\matchup{\InitialSeed(06)}{\InitialSeed(03)}	&	\matchup{\InitialSeed(11)}{\InitialSeed(09)}	&	\matchup{\InitialSeed(12)}{\InitialSeed(08)}	&	\matchup{\InitialSeed(02)}{\InitialSeed(07)}	&	\matchup{\InitialSeed(10)}{\InitialSeed(01)}	&	\matchup{\InitialSeed(04)}{\InitialSeed(05)}	\tabularnewline
+	\round{\Round(07)}		&	\matchup{\InitialSeed(12)}{\InitialSeed(07)}	&	\matchup{\InitialSeed(05)}{\InitialSeed(03)}	&	\matchup{\InitialSeed(06)}{\InitialSeed(02)}	&	\matchup{\InitialSeed(04)}{\InitialSeed(01)}	&	\matchup{\InitialSeed(08)}{\InitialSeed(11)}	&	\matchup{\InitialSeed(09)}{\InitialSeed(10)}	\tabularnewline
+	\round{\Round(08)}		&	\matchup{\InitialSeed(07)}{\InitialSeed(11)}	&	\matchup{\InitialSeed(10)}{\InitialSeed(08)}	&	\matchup{\InitialSeed(09)}{\InitialSeed(01)}	&	\matchup{\InitialSeed(12)}{\InitialSeed(06)}	&	\matchup{\InitialSeed(02)}{\InitialSeed(05)}	&	\matchup{\InitialSeed(03)}{\InitialSeed(04)}	\tabularnewline
+	\round{\Round(09)}		&	\matchup{\InitialSeed(02)}{\InitialSeed(04)}	&	\matchup{\InitialSeed(03)}{\InitialSeed(01)}	&	\matchup{\InitialSeed(05)}{\InitialSeed(12)}	&	\matchup{\InitialSeed(06)}{\InitialSeed(11)}	&	\matchup{\InitialSeed(07)}{\InitialSeed(10)}	&	\matchup{\InitialSeed(08)}{\InitialSeed(09)}	\tabularnewline
+	\round{\Round(10)}		&	\matchup{\InitialSeed(01)}{\InitialSeed(08)}	&	\matchup{\InitialSeed(09)}{\InitialSeed(07)}	&	\matchup{\InitialSeed(10)}{\InitialSeed(06)}	&	\matchup{\InitialSeed(11)}{\InitialSeed(05)}	&	\matchup{\InitialSeed(12)}{\InitialSeed(04)}	&	\matchup{\InitialSeed(02)}{\InitialSeed(03)}	\tabularnewline
+	\round{\Round(11)}		&	\matchup{\InitialSeed(03)}{\InitialSeed(12)}	&	\matchup{\InitialSeed(01)}{\InitialSeed(02)}	&	\matchup{\InitialSeed(04)}{\InitialSeed(11)}	&	\matchup{\InitialSeed(05)}{\InitialSeed(10)}	&	\matchup{\InitialSeed(06)}{\InitialSeed(09)}	&	\matchup{\InitialSeed(07)}{\InitialSeed(08)}	\tabularnewline
+	\hline
+	\round{\Round(12)}		&	\matchup{\PlayoffSeed(01)}{\PlayoffSeed(04)}	&	\matchup{\PlayoffSeed(02)}{\PlayoffSeed(03)}	&	\matchup{\PlayoffSeed(05)}{\PlayoffSeed(08)}	&	\matchup{\PlayoffSeed(06)}{\PlayoffSeed(07)}	&	\matchup{\PlayoffSeed(09)}{\PlayoffSeed(12)}	&	\matchup{\PlayoffSeed(10)}{\PlayoffSeed(11)}	\tabularnewline
+	\round{\Round(13)}		&	\matchup{\PlayoffSeed(05)}{\PlayoffSeed(07)}	&	\matchup{\PlayoffSeed(06)}{\PlayoffSeed(08)}	&	\matchup{\PlayoffSeed(01)}{\PlayoffSeed(03)}	&	\matchup{\PlayoffSeed(02)}{\PlayoffSeed(04)}	&	\matchup{\PlayoffSeed(09)}{\PlayoffSeed(11)}	&	\matchup{\PlayoffSeed(10)}{\PlayoffSeed(12)}	\tabularnewline
+	\round{\Round(14)}		&	\matchup{\PlayoffSeed(01)}{\PlayoffSeed(02)}	&	\matchup{\PlayoffSeed(03)}{\PlayoffSeed(04)}	&	\matchup{\PlayoffSeed(09)}{\PlayoffSeed(10)}	&	\matchup{\PlayoffSeed(11)}{\PlayoffSeed(12)}	&	\matchup{\PlayoffSeed(05)}{\PlayoffSeed(06)}	&	\matchup{\PlayoffSeed(07)}{\PlayoffSeed(08)}	\tabularnewline
+	\hline
+	\end{tabular}
+\end{center}
+
+\end{document}

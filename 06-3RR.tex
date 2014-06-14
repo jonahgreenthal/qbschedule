@@ -1,0 +1,113 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%                                                                     %%%%%
+%%%%%    Template for a six-team triple round robin quizbowl schedule.    %%%%%
+%%%%%    Copyright 2014, Jonah Greenthal <jonah@jonahgreenthal.com>       %%%%%
+%%%%%    You can use, modify, and distribute this in any way you want,    %%%%%
+%%%%%    as long as you give credit.                                      %%%%%
+%%%%%                                                                     %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{qbschedule}
+\usepackage[top=0.5in, bottom=0.5in, left=0.5in, right=0.5in]{geometry}
+
+\def\TournamentName{Six-Team Triple Round Robin}
+\def\TournamentSubtitle{\LaTeX\ Schedule Template}
+\def\Phase{Preliminary Rounds (1--15)}
+\def\ControlRoom{Room Z}
+
+\newarray\Round
+\Round(1)={Round 1}
+\Round(2)={Round 2}
+\Round(3)={Round 3}
+\Round(4)={Round 4}
+\Round(5)={Round 5}
+\Round(6)={Round 6}
+\Round(7)={Round 7}
+\Round(8)={Round 8}
+\Round(9)={Round 9}
+\Round(10)={Round 10}
+\Round(11)={Round 11}
+\Round(12)={Round 12}
+\Round(13)={Round 13}
+\Round(14)={Round 14}
+\Round(15)={Round 15}
+
+\newarray\Seed
+\Seed(1)={Team Seeded First}
+\Seed(2)={Team Seeded Second}
+\Seed(3)={Team Seeded Third}
+\Seed(4)={Team Seeded Fourth}
+\Seed(5)={Team Seeded Fifth}
+\Seed(6)={Team Seeded Sixth}
+
+\newarray\Room
+\Room(1)={Room A} % All rooms are equally balanced. 
+\Room(2)={Room B} % The last game between the 1 and 2 seeds is in Room 3.
+\Room(3)={Room C} 
+
+\setbool{ShowReaders}{true}
+\newarray\Reader
+\Reader(1)={Al Anderson}
+\Reader(2)={Betsy Baxter}
+\Reader(3)={Charlie Castro}
+
+\setbool{ShowScorekeepers}{true}
+\newarray\Scorekeeper
+\Scorekeeper(1)={Ann Allen}
+\Scorekeeper(2)={Bill Berger}
+\Scorekeeper(3)={Carly Carter}
+
+\setbool{ShowBuzzerAssignments}{true}
+\newarray\Buzzer
+\Buzzer(1)={\Seed(3)}
+\Buzzer(2)={\Seed(1)}
+\Buzzer(3)={\Seed(5)}
+
+% It is generally not necessary to edit anything below this line, but hey, do whatever you want.
+\setlength{\StaffSize}{14pt}
+\setlength{\BuzzerSize}{14pt}
+\setlength{\TeamNameSize}{11pt}
+\setlength{\LeftColumnWidth}{1.25in}
+\setlength{\RoomColumnWidth}{2in}
+
+\begin{document}
+\begin{center}
+	\rowcolors*{1}{white}{gray}
+	\begin{tabular}{|y{\LeftColumnWidth}x{\RoomColumnWidth}x{\RoomColumnWidth}x{\RoomColumnWidth}|}
+		\hline
+		\rowcolor{black}
+		\room{Room}				&	\room{\Room(1)}					&	\room{\Room(2)}					&	\room{\Room(3)}					\tabularnewline
+		\ifbool{ShowReaders}{
+		\staff{Reader}			&	\staff{\Reader(1)}				&	\staff{\Reader(2)}				&	\staff{\Reader(3)}		\tabularnewline
+		}{}
+		\ifbool{ShowScorekeepers}{
+		\staff{Scorekeeper}		&	\staff{\Scorekeeper(1)}			&	\staff{\Scorekeeper(2)}			&	\staff{\Scorekeeper(3)}	\tabularnewline
+		}{}
+		\ifbool{ShowBuzzerAssignments}{
+		\buzzer{Buzzer System}	&	\buzzer{\Buzzer(1)}				&	\buzzer{\Buzzer(2)}				&	\buzzer{\Buzzer(3)}				\tabularnewline
+		}{}
+		\hline
+		\round{\Round(1)}		&	\matchup{\Seed(5)}{\Seed(3)}	&	\matchup{\Seed(1)}{\Seed(4)}	&	\matchup{\Seed(6)}{\Seed(2)}	\tabularnewline
+		\round{\Round(2)}		&	\matchup{\Seed(2)}{\Seed(5)}	&	\matchup{\Seed(6)}{\Seed(1)}	&	\matchup{\Seed(4)}{\Seed(3)}	\tabularnewline
+		\round{\Round(3)}		&	\matchup{\Seed(3)}{\Seed(1)}	&	\matchup{\Seed(5)}{\Seed(6)}	&	\matchup{\Seed(2)}{\Seed(4)}	\tabularnewline
+		\round{\Round(4)}		&	\matchup{\Seed(6)}{\Seed(4)}	&	\matchup{\Seed(2)}{\Seed(3)}	&	\matchup{\Seed(1)}{\Seed(5)}	\tabularnewline
+		\round{\Round(5)}		&	\matchup{\Seed(1)}{\Seed(2)}	&	\matchup{\Seed(4)}{\Seed(5)}	&	\matchup{\Seed(3)}{\Seed(6)}	\tabularnewline
+		\hline
+		\round{\Round(6)}		&	\matchup{\Seed(6)}{\Seed(2)}	&	\matchup{\Seed(5)}{\Seed(3)}	&	\matchup{\Seed(1)}{\Seed(4)}	\tabularnewline
+		\round{\Round(7)}		&	\matchup{\Seed(4)}{\Seed(3)}	&	\matchup{\Seed(2)}{\Seed(5)}	&	\matchup{\Seed(6)}{\Seed(1)}	\tabularnewline
+		\round{\Round(8)}		&	\matchup{\Seed(2)}{\Seed(4)}	&	\matchup{\Seed(3)}{\Seed(1)}	&	\matchup{\Seed(5)}{\Seed(6)}	\tabularnewline
+		\round{\Round(9)}		&	\matchup{\Seed(1)}{\Seed(5)}	&	\matchup{\Seed(6)}{\Seed(4)}	&	\matchup{\Seed(2)}{\Seed(3)}	\tabularnewline
+		\round{\Round(10)}		&	\matchup{\Seed(3)}{\Seed(6)}	&	\matchup{\Seed(1)}{\Seed(2)}	&	\matchup{\Seed(4)}{\Seed(5)}	\tabularnewline
+		\hline
+		\round{\Round(11)}		&	\matchup{\Seed(1)}{\Seed(4)}	&	\matchup{\Seed(6)}{\Seed(2)}	&	\matchup{\Seed(5)}{\Seed(3)}	\tabularnewline
+		\round{\Round(12)}		&	\matchup{\Seed(6)}{\Seed(1)}	&	\matchup{\Seed(4)}{\Seed(3)}	&	\matchup{\Seed(2)}{\Seed(5)}	\tabularnewline
+		\round{\Round(13)}		&	\matchup{\Seed(5)}{\Seed(6)}	&	\matchup{\Seed(2)}{\Seed(4)}	&	\matchup{\Seed(3)}{\Seed(1)}	\tabularnewline
+		\round{\Round(14)}		&	\matchup{\Seed(2)}{\Seed(3)}	&	\matchup{\Seed(1)}{\Seed(5)}	&	\matchup{\Seed(6)}{\Seed(4)}	\tabularnewline
+		\round{\Round(15)}		&	\matchup{\Seed(4)}{\Seed(5)}	&	\matchup{\Seed(3)}{\Seed(6)}	&	\matchup{\Seed(1)}{\Seed(2)}	\tabularnewline
+		\hline
+	\end{tabular}
+\end{center}
+
+\end{document}

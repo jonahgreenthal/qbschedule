@@ -1,0 +1,225 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%                                                                     %%%%%
+%%%%%    Template for quizbowl schedule comprising three pools of eight   %%%%%
+%%%%%    teams each, with no repeats from a four-pools-of-six             %%%%%
+%%%%%    preliminary structure.                                           %%%%%
+%%%%%    Copyright 2014, Jonah Greenthal <jonah@jonahgreenthal.com>       %%%%%
+%%%%%    You can use, modify, and distribute this in any way you want,    %%%%%
+%%%%%    as long as you give credit.                                      %%%%%
+%%%%%                                                                     %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{qbschedule}
+\usepackage[top=0.5in, bottom=0.3in, left=0.5in, right=0.5in]{geometry}
+
+\def\TournamentName{Twenty-Four Teams in Three Pools (No repeats)}
+\def\TournamentSubtitle{\LaTeX\ Schedule Template}
+\def\Phase{Playoff Rounds (6--11)}
+\def\ControlRoom{Room Z}
+
+\newarray\Round
+\Round(1)={Round 6}
+\Round(2)={Round 7}
+\Round(3)={Round 8}
+\Round(4)={Round 9}
+\Round(5)={Round 10}
+\Round(6)={Round 11}
+
+\newarray\PoolASeed
+\PoolASeed(1)={Team A-1}
+\PoolASeed(2)={Team A-2}
+\PoolASeed(3)={Team A-3}
+\PoolASeed(4)={Team A-4}
+\PoolASeed(5)={Team A-5}
+\PoolASeed(6)={Team A-6}
+\newarray\PoolBSeed
+\PoolBSeed(1)={Team B-1}
+\PoolBSeed(2)={Team B-2}
+\PoolBSeed(3)={Team B-3}
+\PoolBSeed(4)={Team B-4}
+\PoolBSeed(5)={Team B-5}
+\PoolBSeed(6)={Team B-6}
+\newarray\PoolCSeed
+\PoolCSeed(1)={Team C-1}
+\PoolCSeed(2)={Team C-2}
+\PoolCSeed(3)={Team C-3}
+\PoolCSeed(4)={Team C-4}
+\PoolCSeed(5)={Team C-5}
+\PoolCSeed(6)={Team C-6}
+\newarray\PoolDSeed
+\PoolDSeed(1)={Team D-1}
+\PoolDSeed(2)={Team D-2}
+\PoolDSeed(3)={Team D-3}
+\PoolDSeed(4)={Team D-4}
+\PoolDSeed(5)={Team D-5}
+\PoolDSeed(6)={Team D-6}
+
+\setbool{ShowPoolNames}{true}
+\newarray\PoolName
+\PoolName(1)={Chi}
+\PoolName(2)={Psi}
+\PoolName(3)={Omega}
+
+\newarray\TopPoolRoom
+\TopPoolRoom(1)={Room A}
+\TopPoolRoom(2)={Room B}
+\TopPoolRoom(3)={Room C}
+\TopPoolRoom(4)={Room D}
+\newarray\MiddlePoolRoom
+\MiddlePoolRoom(1)={Room E}
+\MiddlePoolRoom(2)={Room F}
+\MiddlePoolRoom(3)={Room G}
+\MiddlePoolRoom(4)={Room H}
+\newarray\BottomPoolRoom
+\BottomPoolRoom(1)={Room I}
+\BottomPoolRoom(2)={Room J}
+\BottomPoolRoom(3)={Room K}
+\BottomPoolRoom(4)={Room L}
+
+\setbool{ShowReaders}{true}
+\newarray\TopPoolReader
+\TopPoolReader(1)={Al Anderson}
+\TopPoolReader(2)={Betsy Baxter}
+\TopPoolReader(3)={Charlie Castro}
+\TopPoolReader(4)={Dana Donaldson}
+\newarray\MiddlePoolReader
+\MiddlePoolReader(1)={Ellen Easter}
+\MiddlePoolReader(2)={Fred Fishman}
+\MiddlePoolReader(3)={Gail Griffin}
+\MiddlePoolReader(4)={Harold Horwich}
+\newarray\BottomPoolReader
+\BottomPoolReader(1)={Ian Ivy}
+\BottomPoolReader(2)={Jane Jimenez}
+\BottomPoolReader(3)={Karl Kohl}
+\BottomPoolReader(4)={Laura Lang}
+
+\setbool{ShowScorekeepers}{true}
+\newarray\TopPoolScorekeeper
+\TopPoolScorekeeper(1)={Ann Allen}
+\TopPoolScorekeeper(2)={Bill Berger}
+\TopPoolScorekeeper(3)={Carly Carter}
+\TopPoolScorekeeper(4)={Durwin Dubois}
+\newarray\MiddlePoolScorekeeper
+\MiddlePoolScorekeeper(1)={Earl Esparza}
+\MiddlePoolScorekeeper(2)={Fiona Fuller}
+\MiddlePoolScorekeeper(3)={Gary Gomez}
+\MiddlePoolScorekeeper(4)={Haley Holmes}
+\newarray\BottomPoolScorekeeper
+\BottomPoolScorekeeper(1)={Iris Irwin}
+\BottomPoolScorekeeper(2)={Jason Johnson}
+\BottomPoolScorekeeper(3)={Kaitlyn Keefe}
+\BottomPoolScorekeeper(4)={Larry Layton}
+
+\setbool{ShowBuzzerAssignments}{false}
+\newarray\TopPoolBuzzer
+\TopPoolBuzzer(1)={\PoolASeed(01)}
+\TopPoolBuzzer(2)={\PoolBSeed(01)}
+\TopPoolBuzzer(3)={\PoolCSeed(01)}
+\TopPoolBuzzer(4)={\PoolDSeed(01)}
+\newarray\MiddlePoolBuzzer
+\MiddlePoolBuzzer(1)={\PoolASeed(03)}
+\MiddlePoolBuzzer(2)={\PoolBSeed(03)}
+\MiddlePoolBuzzer(3)={\PoolCSeed(03)}
+\MiddlePoolBuzzer(4)={\PoolDSeed(03)}
+\newarray\BottomPoolBuzzer
+\BottomPoolBuzzer(1)={\PoolASeed(05)}
+\BottomPoolBuzzer(2)={\PoolBSeed(05)}
+\BottomPoolBuzzer(3)={\PoolCSeed(05)}
+\BottomPoolBuzzer(4)={\PoolDSeed(05)}
+
+% It is generally not necessary to edit anything below this line, but hey, do whatever you want.
+\setlength{\TeamNameSize}{9.5pt}
+\setlength{\PoolSize}{16pt}
+\setlength{\RoomSize}{12pt}
+\setlength{\StaffSize}{11pt}
+\setlength{\BuzzerSize}{11pt}
+\setlength{\RoomColumnWidth}{1.45in}
+\renewcommand{\arraystretch}{0.8}
+\setlength{\parskip}{8pt}
+
+\begin{document}
+\begin{center}
+	\rowcolors*{1}{gray}{white}
+	\begin{tabular}{|y{\LeftColumnWidth}x{\RoomColumnWidth}x{\RoomColumnWidth}x{\RoomColumnWidth}x{\RoomColumnWidth}|}
+	\hline
+	\ifbool{ShowPoolNames}{
+	 \emptyinvertedcell & \pool{4}{\PoolName(1)}																																											\bigstrut \tabularnewline
+	}{}
+	\room{Room}				&	\room{\TopPoolRoom(1)}						&	\room{\TopPoolRoom(2)}						&	\room{\TopPoolRoom(3)}						&	\room{\TopPoolRoom(4)}						\tabularnewline
+	\ifbool{ShowReaders}{
+	\staff{Reader}			&	\staff{\TopPoolReader(1)}					&	\staff{\TopPoolReader(2)}					&	\staff{\TopPoolReader(3)}				&	\staff{\TopPoolReader(4)}				\tabularnewline
+	}{}
+	\ifbool{ShowScorekeepers}{
+	\staff{Scorekeeper}		&	\staff{\TopPoolScorekeeper(1)}				&	\staff{\TopPoolScorekeeper(2)}				&	\staff{\TopPoolScorekeeper(3)}		&	\staff{\TopPoolScorekeeper(4)}		\tabularnewline
+	}{}
+	\ifbool{ShowBuzzerAssignments}{
+	\buzzer{Buzzer System}	&	\buzzer{\TopPoolBuzzer(1)}					&	\buzzer{\TopPoolBuzzer(2)}					&	\buzzer{\TopPoolBuzzer(3)}					&	\buzzer{\TopPoolBuzzer(4)}					\tabularnewline
+	}{}
+	\hline
+	\round{\Round(1)}		&	\matchup{\PoolDSeed(1)}{\PoolASeed(2)}		&	\matchup{\PoolCSeed(1)}{\PoolBSeed(2)}		&	\matchup{\PoolBSeed(1)}{\PoolCSeed(2)}		&	\matchup{\PoolASeed(1)}{\PoolDSeed(2)}		\tabularnewline
+	\round{\Round(2)}		&	\matchup{\PoolDSeed(1)}{\PoolBSeed(2)}		&	\matchup{\PoolASeed(1)}{\PoolCSeed(2)}		&	\matchup{\PoolBSeed(1)}{\PoolDSeed(2)}		&	\matchup{\PoolCSeed(1)}{\PoolASeed(2)}		\tabularnewline
+	\round{\Round(3)}		&	\matchup{\PoolCSeed(1)}{\PoolDSeed(2)}		&	\matchup{\PoolBSeed(1)}{\PoolASeed(2)}		&	\matchup{\PoolDSeed(1)}{\PoolCSeed(2)}		&	\matchup{\PoolASeed(1)}{\PoolBSeed(2)}		\tabularnewline
+	\round{\Round(4)}		&	\matchup{\PoolBSeed(1)}{\PoolCSeed(1)}		&	\matchup{\PoolASeed(1)}{\PoolDSeed(1)}		&	\matchup{\PoolASeed(2)}{\PoolDSeed(2)}		&	\matchup{\PoolBSeed(2)}{\PoolCSeed(2)}		\tabularnewline
+	\round{\Round(5)}		&	\matchup{\PoolASeed(2)}{\PoolCSeed(2)}		&	\matchup{\PoolBSeed(2)}{\PoolDSeed(2)}		&	\matchup{\PoolASeed(1)}{\PoolCSeed(1)}		&	\matchup{\PoolBSeed(1)}{\PoolDSeed(1)}		\tabularnewline
+	\round{\Round(6)}		&	\matchup{\PoolASeed(1)}{\PoolBSeed(1)}		&	\matchup{\PoolCSeed(1)}{\PoolDSeed(1)}		&	\matchup{\PoolASeed(2)}{\PoolBSeed(2)}		&	\matchup{\PoolCSeed(2)}{\PoolDSeed(2)}		\tabularnewline
+	\hline
+	\end{tabular}
+	
+	
+	\rowcolors*{1}{gray}{white}
+	\begin{tabular}{|y{\LeftColumnWidth}x{\RoomColumnWidth}x{\RoomColumnWidth}x{\RoomColumnWidth}x{\RoomColumnWidth}|}
+	\hline
+	\ifbool{ShowPoolNames}{
+	 \emptyinvertedcell & \pool{4}{\PoolName(2)}																																							\bigstrut \tabularnewline
+	}{}
+	\room{Room}				&	\room{\MiddlePoolRoom(1)}					&	\room{\MiddlePoolRoom(2)}			&	\room{\MiddlePoolRoom(3)}				&	\room{\MiddlePoolRoom(4)}				\tabularnewline
+	\ifbool{ShowReaders}{
+	\staff{Reader}			&	\staff{\MiddlePoolReader(1)}				&	\staff{\MiddlePoolReader(2)}		&	\staff{\MiddlePoolReader(3)}		&	\staff{\MiddlePoolReader(4)}			\tabularnewline
+	}{}
+	\ifbool{ShowScorekeepers}{
+	\staff{Scorekeeper}		&	\staff{\MiddlePoolScorekeeper(1)}			&	\staff{\MiddlePoolScorekeeper(2)}	&	\staff{\MiddlePoolScorekeeper(3)}	&	\staff{\MiddlePoolScorekeeper(4)}		\tabularnewline
+	}{}
+	\ifbool{ShowBuzzerAssignments}{
+	\buzzer{Buzzer System}	&	\buzzer{\MiddlePoolBuzzer(1)}				&	\buzzer{\MiddlePoolBuzzer(2)}		&	\buzzer{\MiddlePoolBuzzer(3)}			&	\buzzer{\MiddlePoolBuzzer(4)}			\tabularnewline
+	}{}
+	\hline
+	\round{\Round(1)}		&	\matchup{\PoolDSeed(3)}{\PoolASeed(4)}	&	\matchup{\PoolCSeed(3)}{\PoolBSeed(4)}	&	\matchup{\PoolBSeed(3)}{\PoolCSeed(4)}	&	\matchup{\PoolASeed(3)}{\PoolDSeed(4)}	\tabularnewline
+	\round{\Round(2)}		&	\matchup{\PoolDSeed(3)}{\PoolBSeed(4)}	&	\matchup{\PoolASeed(3)}{\PoolCSeed(4)}	&	\matchup{\PoolBSeed(3)}{\PoolDSeed(4)}	&	\matchup{\PoolCSeed(3)}{\PoolASeed(4)}	\tabularnewline
+	\round{\Round(3)}		&	\matchup{\PoolCSeed(3)}{\PoolDSeed(4)}	&	\matchup{\PoolBSeed(3)}{\PoolASeed(4)}	&	\matchup{\PoolDSeed(3)}{\PoolCSeed(4)}	&	\matchup{\PoolASeed(3)}{\PoolBSeed(4)}	\tabularnewline
+	\round{\Round(4)}		&	\matchup{\PoolBSeed(3)}{\PoolCSeed(3)}	&	\matchup{\PoolASeed(3)}{\PoolDSeed(3)}	&	\matchup{\PoolASeed(4)}{\PoolDSeed(4)}	&	\matchup{\PoolBSeed(4)}{\PoolCSeed(4)}	\tabularnewline
+	\round{\Round(5)}		&	\matchup{\PoolASeed(4)}{\PoolCSeed(4)}	&	\matchup{\PoolBSeed(4)}{\PoolDSeed(4)}	&	\matchup{\PoolASeed(3)}{\PoolCSeed(3)}	&	\matchup{\PoolBSeed(3)}{\PoolDSeed(3)}	\tabularnewline
+	\round{\Round(6)}		&	\matchup{\PoolASeed(3)}{\PoolBSeed(3)}	&	\matchup{\PoolCSeed(3)}{\PoolDSeed(3)}	&	\matchup{\PoolASeed(4)}{\PoolBSeed(4)}	&	\matchup{\PoolCSeed(4)}{\PoolDSeed(4)}	\tabularnewline
+	\hline
+	\end{tabular}
+	
+	
+	\rowcolors*{1}{gray}{white}
+	\begin{tabular}{|y{\LeftColumnWidth}x{\RoomColumnWidth}x{\RoomColumnWidth}x{\RoomColumnWidth}x{\RoomColumnWidth}|}
+	\hline
+	\ifbool{ShowPoolNames}{
+	 \emptyinvertedcell & \pool{4}{\PoolName(3)}																																											\bigstrut \tabularnewline
+	}{}
+	\room{Room}				&	\room{\BottomPoolRoom(1)}					&	\room{\BottomPoolRoom(2)}					&	\room{\BottomPoolRoom(3)}					&	\room{\BottomPoolRoom(4)}					\tabularnewline
+	\ifbool{ShowReaders}{
+	\staff{Reader}			&	\staff{\BottomPoolReader(1)}				&	\staff{\BottomPoolReader(2)}				&	\staff{\BottomPoolReader(3)}			&	\staff{\BottomPoolReader(4)}				\tabularnewline
+	}{}
+	\ifbool{ShowScorekeepers}{
+	\staff{Scorekeeper}		&	\staff{\BottomPoolScorekeeper(1)}			&	\staff{\BottomPoolScorekeeper(2)}			&	\staff{\BottomPoolScorekeeper(3)}		&	\staff{\BottomPoolScorekeeper(4)}			\tabularnewline
+	}{}
+	\ifbool{ShowBuzzerAssignments}{
+	\buzzer{Buzzer System}	&	\buzzer{\BottomPoolBuzzer(1)}				&	\buzzer{\BottomPoolBuzzer(2)}				&	\buzzer{\BottomPoolBuzzer(3)}				&	\buzzer{\BottomPoolBuzzer(4)}				\tabularnewline
+	}{}
+	\hline
+	\round{\Round(1)}		&	\matchup{\PoolDSeed(5)}{\PoolASeed(6)}		&	\matchup{\PoolCSeed(5)}{\PoolBSeed(6)}		&	\matchup{\PoolBSeed(5)}{\PoolCSeed(6)}		&	\matchup{\PoolASeed(5)}{\PoolDSeed(6)}		\tabularnewline
+	\round{\Round(2)}		&	\matchup{\PoolDSeed(5)}{\PoolBSeed(6)}		&	\matchup{\PoolASeed(5)}{\PoolCSeed(6)}		&	\matchup{\PoolBSeed(5)}{\PoolDSeed(6)}		&	\matchup{\PoolCSeed(5)}{\PoolASeed(6)}		\tabularnewline
+	\round{\Round(3)}		&	\matchup{\PoolCSeed(5)}{\PoolDSeed(6)}		&	\matchup{\PoolBSeed(5)}{\PoolASeed(6)}		&	\matchup{\PoolDSeed(5)}{\PoolCSeed(6)}		&	\matchup{\PoolASeed(5)}{\PoolBSeed(6)}		\tabularnewline
+	\round{\Round(4)}		&	\matchup{\PoolBSeed(5)}{\PoolCSeed(5)}		&	\matchup{\PoolASeed(5)}{\PoolDSeed(5)}		&	\matchup{\PoolASeed(6)}{\PoolDSeed(6)}		&	\matchup{\PoolBSeed(6)}{\PoolCSeed(6)}		\tabularnewline
+	\round{\Round(5)}		&	\matchup{\PoolASeed(6)}{\PoolCSeed(6)}		&	\matchup{\PoolBSeed(6)}{\PoolDSeed(6)}		&	\matchup{\PoolASeed(5)}{\PoolCSeed(5)}		&	\matchup{\PoolBSeed(5)}{\PoolDSeed(5)}		\tabularnewline
+	\round{\Round(6)}		&	\matchup{\PoolASeed(5)}{\PoolBSeed(5)}		&	\matchup{\PoolCSeed(5)}{\PoolDSeed(5)}		&	\matchup{\PoolASeed(6)}{\PoolBSeed(6)}		&	\matchup{\PoolCSeed(6)}{\PoolDSeed(6)}		\tabularnewline
+	\hline
+	\end{tabular}
+\end{center}
+
+\end{document}
