@@ -27,6 +27,9 @@ The files are intended to be pretty self-documenting. If you're already fairly c
 - Save the file.
 - Compile the file by running `pdflatex` on it. That is, open a terminal or command prompt, navigate to the folder you are working in, and run the command `pdflatex theFileName.tex`.
 
+## There's no template for my format!
+Open up an [issue](https://github.com/jonahgreenthal/qbschedule/issues) and I'll try to make one. Pull requests are also welcome.
+
 ## LaTeX dependencies
 These packages can be installed from [CTAN](http://www.ctan.org/), or — if you are on Windows — installed automatically upon first run using [MiKTeX](http://miktex.org/).
 
