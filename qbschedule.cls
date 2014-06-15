@@ -15,12 +15,9 @@
 \ProcessOptions\relax
 \LoadClass[12pt]{article}
 
-\RequirePackage[T1]{fontenc}
 \RequirePackage[none]{hyphenat}
-\RequirePackage[utf8]{inputenc}
-\RequirePackage{lmodern}
-\RequirePackage{cmap}
-\RequirePackage{fixltx2e}
+\RequirePackage{fontspec}
+%\RequirePackage{cmap}
 \RequirePackage{microtype}
 \RequirePackage{calc}
 \RequirePackage{etoolbox}
@@ -96,6 +93,7 @@
 \pagestyle{empty}
 
 \newcommand{\Header}{ % Designed to be overridden in individual schedules with \renewcommand
+	\ifdef{\MainFont}{\setmainfont[Ligatures=TeX]{\MainFont}}{}
 	{\fontsize{\TournamentNameSize}{\TournamentNameLineSpacing}\selectfont\textbf{\TournamentName}}{}\\
 	\ifdef{\TournamentSubtitle}{{\fontsize{\TournamentSubtitleSize}{\TournamentSubtitleLineSpacing}\selectfont\textit{\TournamentSubtitle}\\}}{}
 	\ifdef{\Phase}{{\fontsize{\PhaseSize}{\PhaseLineSpacing}\selectfont\Phase}}{}
