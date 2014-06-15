@@ -16,7 +16,7 @@ The files are intended to be pretty self-documenting. If you're already fairly c
 
 1. If you don't already have it, download and install LaTeX. [Here are some guides that may be helpful.](http://latex-project.org/ftp.html)
 1. Download `qbschedule.cls` and the template `.tex` file(s) that you want to use.
-1. Open the template file(s) in your favorite text editor (e.g. `vim` or `emacs` for Unix/Linux, [Notepad++](http://notepad-plus-plus.org/) for Windows, or [TextMate](http://macromates.com/) for Mac.
+1. Open the template file(s) in your favorite text editor (e.g. `vim` or `emacs` for Unix/Linux, [Notepad++](http://notepad-plus-plus.org/) for Windows, or [TextMate](http://macromates.com/) for Mac).
 1. Change the settings near the top of the template file. You probably want to change…
     - `TournamentName`, whose name is probably self-explanatory
     - `TournamentSubtitle`. For instance, this might contain the expansion of an acronym that is your tournament's name, text like `Hosted by Central High School`, etc. If you don't want to use a subtitle, you should delete this line.
