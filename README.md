@@ -21,6 +21,7 @@ The files are intended to be pretty self-documenting. If you're already fairly c
     - `TournamentName`, whose name is probably self-explanatory
     - `TournamentSubtitle`. For instance, this might contain the expansion of an acronym that is your tournament's name, text like `Hosted by Central High School`, etc. If you don't want to use a subtitle, you should delete this line.
     - `Phase`, which is intended to indicate the portion of the tournament this schedule describes, e.g. preliminary rounds or playoffs. If this isn't applicable, you should delete this line.
+    - `ControlRoom`. This will be displayed at the bottom of the schedule. If you don't want this displayed, you should delete this line.
     - `MainFont`. You should be able to change this to the name of any font you have on your system, e.g. `Arial`, `Garamond`, `Times New Roman`, or `Comic Sans MS`.
     - The boolean values `ShowPoolNames` (if applicable), `ShowReaders`, `ShowScorekeepers`, and `ShowBuzzerAssignments`. These mean what they sound like they mean.
     - Entries in the seeding array(s), which have names like `\Seed` or (for playoff schedules) `\PoolA`. You change their entries by modifying lines that look like `\Seed(1)={Team 1}`; the `Team 1` part should be changed to the name of the first seed, etc. For full (or multiple) round robins, of course, the seeding doesn't really matter, but generally speaking, matches between top seeds take place later in the schedule.
